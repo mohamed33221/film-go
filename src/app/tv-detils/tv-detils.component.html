@@ -1,0 +1,82 @@
+
+<section class="container-fluid color-coustom text-center">
+  <article class="row p-2">
+    <div *ngIf="openpage == true"   class="col-lg-9">
+        <img class="w-100" [src]="imgs+tvs.backdrop_path" alt="{{tvs.name}}">
+        <h2 class="py-2">Tv-Show title : {{tvs.name}}</h2>
+        <h6>Tv Show language : {{tvs.original_language}}</h6>
+        <h6>Release date : {{tvs.last_air_date}}</h6>
+        <p class="py-2">movie information
+          :
+          {{tvs.overview}}
+        </p>
+        <div>
+          <h4>Last Episode</h4>
+          <ul>
+            <li>Title {{tvlastEpisode.name}}</li>
+            <li>Release date {{tvlastEpisode.air_date}}</li>
+            <li>Episode Number : {{tvlastEpisode.episode_number}}</li>
+            <li>Season Number : {{tvlastEpisode.season_number}}</li>
+            <li>
+              <img class="w-50 py-3" [src]="imgs+tvlastEpisode.still_path" alt="{{tvlastEpisode.name}}">
+            </li>
+          </ul>
+        </div>
+        <div>
+            <h4>
+              Production Companies
+            </h4>
+            <ul *ngFor="let item of tvProductionCompanies">
+              <li>
+                Company Name : {{item.name}}
+              </li>
+              <li>
+                Company Origin Country : {{item.origin_country}}
+              </li>
+              <li>
+                <img class="w-50 py-3" [src]="imgs+item.logo_path" alt="{{item.name}}">
+              </li>
+            </ul>
+        </div>
+
+        <div >
+          <h3>All Seasons information</h3>
+          <div class="d-flex justify-content-around align-items-center" *ngFor="let item of tvSeasons">
+            <ul>
+              <li>
+               {{item.name}}
+              </li>
+              <li>
+                  Release Date : {{item.air_date}}
+              </li>
+              <li>
+                Episode Count : {{item.episode_count}}
+              </li>
+              <li>
+                <a class="link-coustom-new" [routerLink]="['../../tvshowdetails', item.id]">More</a>
+              </li>
+            </ul>
+            <img class="w-25 pt-3"  [src]="imgs+item.poster_path" alt="{{item.name}}">
+          </div>
+
+        </div>
+        <div *ngFor="let item of tvNetwork" class="networks">
+          <h4>For NetWork
+            {{item.name}}
+          </h4>
+          <img class="w-50 pt-3" [src]="imgs+item.logo_path" alt="{{item.name}}">
+        </div>
+    </div>
+    <div  class="col-lg-3 ">
+      <h2 class="text-center">Recommend Moives</h2>
+      <div *ngFor="let item of tvRecommend" class="py-3 text-center hold-info position-relative">
+        <img  [src]="imgs+item.poster_path" alt="{{item.name}}">
+        <div class="info px-1">
+            <h4>{{item.name}}</h4>
+            <h6>vote : <span>{{item.vote_average}}</span></h6>
+            <a class="link-coustom-new" [routerLink]="['../../tvshowdetails', item.id]">More</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>

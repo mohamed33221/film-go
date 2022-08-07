@@ -1,0 +1,20 @@
+<section class="color-coustom">
+  <article class="container">
+
+
+    <div *ngIf="openpage == true" class="row">
+      <h4></h4>
+      <div *ngFor="let item of trindingMovie" class="col-lg-3 hold-info position-relative py-2">
+        <img [src]="imgs+item.poster_path" alt="{{item.title}}">
+        <div class="info px-1">
+          <h4>{{item.title}}</h4>
+          <h6>vote : <span>{{item.vote_average}}</span></h6>
+          <a class="link-coustom-new" [routerLink]="['../movedetails', item.id]">More</a>
+        </div>
+      </div>
+      <ul>
+
+      </ul>
+    </div>
+  </article>
+</section>

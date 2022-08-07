@@ -1,0 +1,36 @@
+
+<section class="container-fluid color-coustom text-center">
+  <article *ngIf="openpage == true"  class="row p-2">
+    <div   class="col-lg-9">
+        <img class="w-100" [src]="imgs+movies.backdrop_path" alt="{{movies.title}}">
+        <h2 class="py-2">moive title : {{movies.title}}</h2>
+        <h3>Tag Line : {{movies.tagline}}</h3>
+        <h6>Moive lang : {{movies.original_language}}</h6>
+        <h6>Release date : {{movies.release_date}}</h6>
+        <p class="py-2">movie information
+          :
+          {{movies.overview}}
+        </p>
+        <div>
+          <h4>Production Companies</h4>
+          <div *ngFor="let item of productionCompanies">
+            <h5>{{item.name}}</h5>
+            <img class="w-50" [src]="imgs+item.logo_path" alt="{{item.name}}">
+          </div>
+        </div>
+
+
+    </div>
+    <div  class="col-lg-3">
+      <h2 class="text-center">Recommend Moives</h2>
+      <div *ngFor="let item of recommendMoive" class="py-3  text-center hold-info position-relative">
+        <img  [src]="imgs+item.poster_path" alt="{{item.title}}">
+        <div class="info px-1">
+            <h4>{{item.title}}</h4>
+            <h6>vote : <span>{{item.vote_average}}</span></h6>
+            <a class="link-coustom-new" [routerLink]="['../../movedetails', item.id]">More</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>

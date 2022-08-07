@@ -1,0 +1,190 @@
+
+
+
+<!-- /////////
+///// header ///////
+///// -->
+<header class="header-control p-4">
+      <!-- nav bar section -->
+
+
+      <!-- ///////////////////////
+      section Continer
+      /////////////////////// -->
+        <h2 class="text-center">TOP RATED</h2>
+      <section class="containerss mt-2">
+
+
+          <div id="carousel">
+            <figure *ngFor="let item of topRated">
+              <img class="w-100" [src]="imgs+item.backdrop_path" alt="{{item.original_title}}">
+              <div class="text-center text-coustom">
+                <h4>{{item.original_title}}</h4>
+                <h5 class="text-warning">{{item.vote_average}}</h5>
+                <h5>{{item.release_date}}</h5>
+                <a class="link-coustom-new" [routerLink]="['/movedetails' , item.id]">For More</a>
+              </div>
+            </figure>
+          </div>
+
+
+
+
+      </section>
+
+
+
+
+
+
+</header>
+
+    <!-- ///////////////////////
+      slider Continer
+      /////////////////////// -->
+
+<section class="first-section p-5">
+
+      <input type="radio" class="tab-toggle" name="tab-toggle" id="tab1" checked>
+      <input type="radio" class="tab-toggle" name="tab-toggle" id="tab2" >
+
+      <ul class="tab-list">
+        <li class="tab-item px-1">
+          <label class="tab-trigger" for="tab1">MOVIES <span class="px-1 active-back">/</span></label>
+        </li>
+        <li class="tab-item">
+          <label class="tab-trigger" for="tab2">TV SHOW</label>
+        </li>
+      </ul>
+
+      <div class="tab-container">
+        <!-- MOVIES -->
+        <div class="tab-content">
+
+          <div  class="container ">
+
+            <div class="row d-flex justify-content-center">
+
+                <!-- page 1  -->
+              <div *ngFor="let item of satDataMovie" class="hold-info col-lg-3 button grow-rotate  col-md-6 p-0 position-relative">
+                <img class="w-100  p-1" [src]="imgs+item.poster_path" alt="">
+                <div class="info px-1">
+                  <h4>{{item.title}}</h4>
+                  <h6>vote : <span>{{item.vote_average}}</span></h6>
+                  <a  class="link-coustom-new" [routerLink]="['/movedetails' , item.id]">More</a>
+                </div>
+              </div>
+
+              <!-- page 2  -->
+
+              <div *ngFor="let item of satDataMovie2" class=" hold-hind hold-info col-lg-3 button grow-rotate  col-md-6 p-0 position-relative">
+                <img class="w-100  p-1" [src]="imgs+item.poster_path" alt="">
+                <div class="info px-1">
+                  <h4>{{item.title}}</h4>
+                  <h6>vote : <span>{{item.vote_average}}</span></h6>
+                  <a class="link-coustom-new" [routerLink]="['/movedetails' , item.id]">More</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+            <!-- button -->
+          <div class="d-flex justify-content-center">
+            <button class="btn" id="show-cntrol">See More</button>
+          </div>
+
+        </div>
+
+
+        <!-- TV SHOW -->
+        <div class="tab-content">
+
+          <div  class="container ">
+
+            <div class="row d-flex justify-content-center">
+
+                <!-- page 1  -->
+              <div *ngFor="let item of satDataTv" class="hold-info col-lg-3 button grow-rotate  col-md-6 p-0 position-relative">
+                <img class="w-100  p-1" [src]="imgs+item.poster_path" alt="">
+                <div class="info px-1">
+                  <h4>{{item.name}}</h4>
+                  <h6>vote : <span>{{item.vote_average}}</span></h6>
+                  <a class="link-coustom-new" [routerLink]="['/tvshowdetails' , item.id]">More</a>
+
+                </div>
+              </div>
+
+              <!-- page 2  -->
+
+              <div *ngFor="let item of satDataTv2" class="hold-hind2 hold-info col-lg-3 button grow-rotate  col-md-6 p-0 position-relative">
+                <img class="w-100  p-1" [src]="imgs+item.poster_path" alt="">
+                <div class="info px-1">
+                  <h4>{{item.name}}</h4>
+                  <h6>vote : <span>{{item.vote_average}}</span></h6>
+                  <a  class="link-coustom-new" [routerLink]="['/tvshowdetails' , item.id]">More</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+              <!-- button -->
+              <div class="d-flex justify-content-center">
+                <button class="btn" id="show-cntrol">See More</button>
+              </div>
+
+
+
+
+        </div>
+
+
+      </div>
+
+
+</section>
+
+
+
+<section class="secend-section d-flex align-items-center p-2">
+
+<div class="container">
+
+
+          <!-- bar  -->
+          <div class=" container d-flex justify-content-between">
+
+            <div class="custom-color">
+              <div></div>
+              <h3> UP COMING MOVIES</h3>
+              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+            </div>
+
+
+
+          </div>
+
+          <!-- posters -->
+        <div class="container">
+
+            <div class="row text-center">
+                <div *ngFor="let items of upComing" class="col-lg-3  horder-data">
+                  <img class="w-100" [src]="imgs+items.poster_path" alt="{{items.original_title}}">
+                  <div class="data">
+                    <h5>{{items.original_title}}</h5>
+                    <h6>{{items.release_date}}</h6>
+                    <h6>vote : {{items.vote_average}}</h6>
+                    <a class="link-coustom-new" [routerLink]="['../movedetails', items.id]">For More</a>
+                  </div>
+                </div>
+            </div>
+
+        </div>
+
+</div>
+
+
+</section>
+
+
+

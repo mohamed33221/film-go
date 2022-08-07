@@ -1,0 +1,47 @@
+$fontnav:0.7rem;
+$mincolor:#1a1d24;
+$secColor:#f2f2f2;
+$fontColor:rgba(255, 255, 255, 0.603);
+$fontColorActive:rgb(255, 255, 255);
+$fontColorActive2:rgba(39, 54, 58, 0.349);
+$fontColorActivefor2:rgb(39, 54, 58);;
+$linkA:inherit;
+
+nav
+{
+  background-color: $mincolor;
+}
+
+a
+{
+  cursor: pointer;
+}
+.custom-fonts
+{
+  color: $fontColor;
+
+}
+.custom-font
+{
+  font-size: $fontnav;
+  color: $fontColor;
+}
+li a
+{
+
+  color: inherit;
+}
+li i
+{
+  color: inherit;
+  cursor: pointer;
+}
+#search-input
+{
+  display: none;
+  opacity: 1;
+}
+.active-back2
+{
+  color: $fontColorActive !important;
+}

@@ -1,0 +1,71 @@
+/* You can add global styles to this file, and also import other style files */
+$fontnav:0.7rem;
+$mincolor:#1a1d24;
+$secColor:#f2f2f2;
+$fontColor:rgba(255, 255, 255, 0.603);
+$fontColorActive:rgb(255, 255, 255);
+$fontColorActive2:rgba(39, 54, 58, 0.349);
+$fontColorActivefor2:rgb(39, 54, 58);;
+$linkA:inherit;
+body
+{
+  overflow-x: hidden;
+}
+
+.link-coustom-new {
+  // color: #000;
+  color: #f2f2f2;
+  position: relative;
+  text-decoration: none;
+  padding: 0.1rem;
+  background: linear-gradient(90deg, #00ff9d, #00ffaa73);
+  background-position: right;
+  background-size: 0% 100%;
+  background-repeat: repeat-y;
+  transition: background-size 300ms ease-in-out;
+}
+.link-coustom-new:hover {
+  background-size: 100% 100%;
+  background-position: left;
+}
+
+.color-coustom
+{
+  background-color: $mincolor;
+  h2 , h3 , h6 , p , h4 , ul
+  {
+    color: $secColor;
+  }
+  ul
+  {
+    list-style-type: none;
+
+  }
+}
+
+.info
+{
+  position: absolute;
+  bottom: 5%;
+  color: #ececec;
+  background-color: $mincolor;
+  opacity:0;
+  font-size: 0.7rem;
+}
+.info span
+{
+  color: gold;
+}
+.hold-info img
+{
+  width: 75%;
+  transition:width 1s ;
+}
+.hold-info:hover   img
+{
+  width: 90%;
+}
+.hold-info:hover  .info
+{
+  opacity: 1 ;
+}
